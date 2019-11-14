@@ -1,7 +1,12 @@
-public class Citas
-{
+public class Citas{
     private String Fecha, Hora, Descripcion;
 
+    public Citas(String Fecha, String Hora, String Descripcion)
+    {
+        this.SetFecha(Fecha);
+        this.SetHora(Hora);
+        this.SetDescripcion(Descripcion);
+    }
     public String SetFecha(String Fecha){
         this.Fecha = Fecha;
     }
