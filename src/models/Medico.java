@@ -1,15 +1,16 @@
-public class Medico
-{
+package models;
+
+public class Medico{
     private String NombreMedico, APaternoMedico, AMaternoMedico, CorreoMedico;
     
     public Medico(String NombreMedico, String APaternoMedico, String AMaternoMedico, String CorreoMedico){
-        this.SetNombreMedico(NombreMedico);
-        this.SetAPaternoMedico(APaternoMedico);
-        this.SetAMaternoMedico(AMaternoMedico);
-        this.SetCorreoMedico(CorreoMedico);
+        this.NombreMedico = NombreMedico;
+        this.APaternoMedico = APaternoMedico;
+        this.AMaternoMedico = AMaternoMedico;
+        this.CorreoMedico = CorreoMedico;
     }
 
-    public String SetNombreMedico(String NombreMedico){
+    public void SetNombreMedico(String NombreMedico){
         this.NombreMedico = NombreMedico;
     }
 
@@ -17,7 +18,7 @@ public class Medico
         return NombreMedico;
     }
 
-    public String SetAPaternoMedico(String APaternoMedico){
+    public void SetAPaternoMedico(String APaternoMedico){
         this.APaternoMedico = APaternoMedico;
     }
 
@@ -25,7 +26,7 @@ public class Medico
         return APaternoMedico;
     }
 
-    public String SetAMaternoMedico(String AMaternoMedico){
+    public void SetAMaternoMedico(String AMaternoMedico){
         this.AMaternoMedico = AMaternoMedico;
     }
 
@@ -33,11 +34,12 @@ public class Medico
         return AMaternoMedico;
     }
 
-    public String SetCorreoMedico(String CorreoMedico){
+    public void SetCorreoMedico(String CorreoMedico){
         this.CorreoMedico = CorreoMedico;
     }
     
     public String GetCorreoMedico(){
             return CorreoMedico;
     }
+
 }

@@ -1,17 +1,19 @@
+package models;
+
 public class Paciente{
     private String NombrePaciente, APaternoPaciente, AMaternoPaciente, CorreoPaciente, TContacto;
     private int EdadPaciente;
 
     public Paciente(String NombrePaciente, String APaternoPaciente, String AMaternoPaciente, String CorreoPaciente, String TContacto, int EdadPaciente){
-        this.SetNombrePaciente(NombrePaciente);
-        this.SetAPaternoPaciente(APaternoPaciente);
-        this.SetAMaternoPaciente(AMaternoPaciente);
-        this.SetCorreoPaciente(CorreoPaciente);
-        this.SetTContacto(TContacto);
-        this.SetEdadPaciente(EdadPaciente);
+        this.NombrePaciente = NombrePaciente;
+        this.APaternoPaciente = APaternoPaciente;
+        this.AMaternoPaciente = AMaternoPaciente;
+        this.CorreoPaciente = CorreoPaciente;
+        this.TContacto = TContacto;
+        this.EdadPaciente = EdadPaciente;
     }
 
-    public String SetNombrePaciente(String NombrePaciente){
+    public void SetNombrePaciente(String NombrePaciente){
         this.NombrePaciente = NombrePaciente;
     }
 
@@ -19,7 +21,7 @@ public class Paciente{
         return NombrePaciente;
     }
 
-    public String SetAPaternoPaciente(String APaternoPaciente){
+    public void SetAPaternoPaciente(String APaternoPaciente){
         this.APaternoPaciente = APaternoPaciente;
     }
 
@@ -27,7 +29,7 @@ public class Paciente{
         return APaternoPaciente;
     }
 
-    public String SetAMaternoPaciente(String AMaternoPaciente){
+    public void SetAMaternoPaciente(String AMaternoPaciente){
         this.AMaternoPaciente = AMaternoPaciente;
     }
 
@@ -35,7 +37,7 @@ public class Paciente{
         return AMaternoPaciente;
     }
 
-    public String SetCorreoPaciente(String CorreoPaciente){
+    public void SetCorreoPaciente(String CorreoPaciente){
         this.CorreoPaciente = CorreoPaciente;
     }
 
@@ -43,7 +45,7 @@ public class Paciente{
         return CorreoPaciente;
     }
 
-    public String SetTContacto(String TContacto){
+    public void SetTContacto(String TContacto){
         this.TContacto = TContacto;
     }
 
@@ -51,11 +53,12 @@ public class Paciente{
         return TContacto;
     }
 
-    public int SetEdadPaciente(String EdadPaciente){
+    public void SetEdadPaciente(int EdadPaciente){
         this.EdadPaciente = EdadPaciente;
     }
     
     public int GetEdadPaciente(){
         return EdadPaciente;
     }
+
 }

@@ -1,3 +1,5 @@
+package models;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -5,12 +7,10 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import com.mysql.jdbc.Statement;
 import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
 
-public class ConectarBD{
+public class Conexion{
 
-    Medico DatosMedico = new Medico();
-    Paciente DatosPaciente = new Paciente();
-    Citas DatosCitas = new Citas();
     static int IDPaciente = 1, IDMedico = 1;
     //clase que me permite realizar la conexión y las consultas SQL;
     static Connection conn;
@@ -22,7 +22,7 @@ public class ConectarBD{
     //nombre de la base de datos a conectar;
     static final String url = "jdbc:mysql://localhost/Clinica?useSSL=false";
 
-    public ConectarBD(){
+    public Conexion(){
         conn = null;
         try{
             Class.forName(driver);
@@ -52,7 +52,7 @@ public class ConectarBD{
             System.out.println("Terminar conexión");
         }
     }
-    public void GuardarRegistros() throws SQLException{
+    public void GuardarRegistros(Medico DatosMedico, Paciente DatosPaciente, Citas DatosCitas) throws SQLException{
         try{
 
             PreparedStatement InsertarDatosMedico = conn.prepareStatement("INSERT INTO Medico VALUES(null,?,?,?,?)");
@@ -79,15 +79,15 @@ public class ConectarBD{
             InsertarDatosPaciente.executeUpdate();
 
             // Inserto parámetros de citas al comando INSERT INTO;
-            InsertarDatosPaciente.setInt(1, IDMedico);
-            InsertarDatosPaciente.setInt(2, IDPaciente);
-            InsertarDatosPaciente.setString(3, DatosCitas.GetFecha());
-            InsertarDatosPaciente.setString(4, DatosCitas.GetHora());
-            InsertarDatosPaciente.setString(5, DatosCitas.GetDescripcion());
+            InsertarDatosCitas.setInt(1, IDMedico);
+            InsertarDatosCitas.setInt(2, IDPaciente);
+            InsertarDatosCitas.setString(3, DatosCitas.GetFecha());
+            InsertarDatosCitas.setString(4, DatosCitas.GetHora());
+            InsertarDatosCitas.setString(5, DatosCitas.GetDescripcion());
             // Agrego registro a la tabla Citas en la base de datos;
-            InsertarDomicilio.executeUpdate();
+            InsertarDatosCitas.executeUpdate();
 
-            System.out.println("Un nuevo paciente fue ingresado");
+            JOptionPane.showMessageDialog(null, "Se ha registrado el paciente", "Registro", JOptionPane.INFORMATION_MESSAGE);
         }
         catch(SQLException e){
             System.out.println(e.getMessage());

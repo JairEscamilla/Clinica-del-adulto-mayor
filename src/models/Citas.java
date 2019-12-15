@@ -1,13 +1,20 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package models;
+
 public class Citas{
     private String Fecha, Hora, Descripcion;
 
     public Citas(String Fecha, String Hora, String Descripcion){
-        this.SetFecha(Fecha);
-        this.SetHora(Hora);
-        this.SetDescripcion(Descripcion);
+        this.Fecha = Fecha;
+        this.Hora = Hora;
+        this.Descripcion = Descripcion;
     }
 
-    public String SetFecha(String Fecha){
+    public void SetFecha(String Fecha){
         this.Fecha = Fecha;
     }
 
@@ -15,7 +22,7 @@ public class Citas{
         return Fecha;
     }
 
-    public String SetHora(String Hora){
+    public void SetHora(String Hora){
         this.Hora = Hora;
     }
 
@@ -23,7 +30,7 @@ public class Citas{
         return Hora;
     }
 
-    public String SetDescripcion(String Descripcion){
+    public void SetDescripcion(String Descripcion){
         this.Descripcion = Descripcion;
     }
     
