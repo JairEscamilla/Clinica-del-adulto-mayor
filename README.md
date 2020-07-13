@@ -1,4 +1,4 @@
-# Videogame
+# Clinica del adulto mayor
 
 _Sistema que ayuda a optimizar la generacion de citas en la Clinica de Evaluación Funcional y Nutricional del Adulto Mayor de la Universidad Iberoamericana_
 
